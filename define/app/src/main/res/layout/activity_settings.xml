@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="settingsViewModel"
+            type="in.ceeq.define.ui.settings.SettingsViewModel"/>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundLight"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <ImageButton
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:id="@+id/btnClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/close"
+                    android:gravity="start"
+                    android:minWidth="0dp"
+                    android:textAllCaps="false"
+                    app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                    tools:text="Love"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Display1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/top_margin_16"
+                    android:text="@string/settings"
+                    android:textColor="@android:color/black"
+                    tools:text="Settings"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/top_margin_36"
+                    android:text="@string/title_to_language"
+                    android:textAllCaps="true"
+                    tools:text="@string/title_to_language"
+                    />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/list_text_margin_vertical"
+                    android:layout_marginStart="@dimen/list_text_margin_vertical"
+                    android:layout_marginTop="@dimen/list_text_margin_vertical"
+                    android:entries="@array/language_array"
+                    android:paddingBottom="@dimen/list_text_margin_vertical"
+                    android:paddingTop="@dimen/list_text_margin_vertical"
+                    android:selectedItemPosition="@{settingsViewModel.selectedLanguagePosition}"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/top_margin_24"
+                    android:background="@color/colorDivider"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnFeedback"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="0dp"
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:text="@string/feedback"
+                    android:textColor="@android:color/black"
+                    app:fontTypeface="regular"
+                    tools:text="@string/feedback"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@color/colorDivider"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRateApp"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="0dp"
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:text="@string/rate"
+                    android:textColor="@android:color/black"
+                    app:fontTypeface="regular"
+                    tools:text="@string/rate"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@color/colorDivider"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnShareApp"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="0dp"
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:text="@string/share"
+                    android:textColor="@android:color/black"
+                    app:fontTypeface="regular"
+                    tools:text="@string/share"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:id="@+id/btnUpdateApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/close"
+                    android:gravity="start|center"
+                    android:minWidth="0dp"
+                    android:paddingRight="0dp"
+                    android:textAllCaps="false"
+                    android:visibility="@{settingsViewModel.updateAvailable ? View.VISIBLE : View.GONE}"
+                    app:srcCompat="@drawable/ic_cloud_download_black_24dp"
+                    tools:text="Love"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:gravity="center"
+                    android:linksClickable="true"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@{settingsViewModel.appVersion}"
+                    tools:text="@string/app_version"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"   >
+
+    <item
+        android:id="@+id/completeSetupAction"
+        android:showAsAction="always"
+        android:title="@string/done"
+        android:actionLayout="@layout/action_item_done" >
+    </item>
+
+</menu>
